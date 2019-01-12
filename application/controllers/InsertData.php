@@ -43,6 +43,7 @@ class InsertData extends CI_Controller
         $detail = $this->input->post('detail');
         $username = $this->input->post('username');
         $pwd = $this->input->post('pwd');
+
         $this->InsertModel->insertpersonal($title, $position, $name, $noaddress, $tel, $moo, $tumbol, $detail,$username, $pwd);
     }
     function insertposition()

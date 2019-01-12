@@ -167,10 +167,10 @@
                     moo: $('#moo').val(),
                     tumbol: $('#tumbol').val(),
                     detail: this.detail,
-                    username : this.username,
+                    username : this.userlogin,
                     pwd : this.pwd
                 });
-                window.location.reload();
+                reload();
             },
             setlookdetail: function (pk) {
                 var self = this;
@@ -218,14 +218,18 @@
                         userlogin : this.userlogin,
                         pwd : this.pwd
                     });
-                    window.location.reload();
+                reload();
             },
             deletedata : function (pk) {
                 $.post("<?php echo site_url('DeleteData/delpersonal')?>",{pk:pk});
-                window.location.reload();
+                reload();
             }
 
         }
 
     });
+    function reload()
+    {
+        location.reload();
+    }
 </script>

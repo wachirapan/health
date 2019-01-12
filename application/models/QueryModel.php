@@ -56,6 +56,7 @@ class QueryModel extends CI_Model
     }
     function qpersonal($limit, $start)
     {
+        $data = array();
         $query = $this->db->get('personal',$limit, $start);
         if($query->num_rows() > 0){
             foreach($query->result() as $row){
@@ -63,7 +64,7 @@ class QueryModel extends CI_Model
             }
             return $data ;
         }
-        return false ;
+        return $data ;
     }
     function qdetailpersonal($pk)
     {
