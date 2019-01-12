@@ -14,6 +14,7 @@ class QueryModel extends CI_Model
     }
     function qrecruit($limit, $start)
     {
+        $data = array();
         $this->db->limit($limit, $start);
         $this->db->where('rc_status',1);
         $this->db->where('rc_project',$this->session->userdata('projectid'));
@@ -24,7 +25,7 @@ class QueryModel extends CI_Model
             }
             return $data ;
         }
-        return false ;
+        return $data ;
     }
     function qtitle()
     {
@@ -79,7 +80,9 @@ class QueryModel extends CI_Model
     }
     function qproject($limit, $start)
     {
+        $data= array();
         $this->db->order_by('bp_id','desc');
+        $this->db->where('bp_status',1);
         $query = $this->db->get('builtproject',$limit, $start);
         if($query->num_rows() > 0){
             foreach($query->result() as $row){
@@ -87,7 +90,7 @@ class QueryModel extends CI_Model
             }
             return $data ;
         }
-        return false ;
+        return $data ;
     }
     function qgeteditproject($pk)
     {

@@ -21,7 +21,7 @@ class InsertModel extends CI_Model
             'rc_detailaddress'=>$detailaddres,
             'rc_detail'=>$detail,
             'rc_status'=>1,
-            'rc_project'=>$this->session->usertdata('projectid'),
+            'rc_project'=>$this->session->userdata('projectid'),
             'rc_outofproject'=>1
         );
         $this->db->insert('recruit',$data);

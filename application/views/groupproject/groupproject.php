@@ -51,7 +51,7 @@
         methods :  {
             insertdata : function () {
                 $.post("<?php echo site_url('InsertData/insertproject')?>",{before:this.before, after:this.after});
-                window.location.reload();
+                reload();
             },
             setedtidata : function (pk) {
                 this.pk = pk ;
@@ -67,15 +67,19 @@
             },
             updatedata : function () {
                 $.post("<?php echo site_url('UpdateData/updateproject')?>",{pk:this.pk, before:this.before, after:this.after});
-                window.location.reload();
+                reload();
             },
             progress : function (pk) {
                 window.location.href = "<?php echo site_url('welcome/setsessionindex?pk=')?>"+pk;
             },
             finishproject : function (pk) {
                 $.post("<?php echo site_url('UpdateData/finishproject')?>",{pk:pk});
-                window.location.reload();
+                reload();
             }
         }
     });
+    function reload()
+    {
+        location.reload();
+    }
 </script>

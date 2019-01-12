@@ -155,6 +155,7 @@
         },
         methods : {
             insertdata: function () {
+
                 $.post("<?php echo site_url('InsertData/insertrecruit')?>", {
                     title: $('#title').val(),
                     name: this.name,
@@ -166,7 +167,7 @@
                     detailaddress: this.detailaddress,
                     detail: this.detail
                 });
-                window.location.reload();
+                reload();
             },
             lookdetail: function (pk) {
                 var self = this ;
@@ -212,14 +213,18 @@
                     detailaddress: this.detailaddress,
                     detail: this.detail
                 });
-                window.location.reload();
+                reload();
             },
             deletedata : function (pk) {
                 $.post("<?php echo site_url('DeleteData/deleterecruit')?>",{pk:pk});
-                window.location.reload();
+                reload();
             }
 
         }
 
     });
+    function reload()
+    {
+        location.reload();
+    }
 </script>
