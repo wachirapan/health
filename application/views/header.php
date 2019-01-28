@@ -228,7 +228,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </ul>
     <ul class="logout">
         <li>
-            <a href="login.html">
+            <a href="<?php echo site_url('LoginPage/logout')?>">
                 <i class="icon-off nav-icon"></i>
 			<span class="nav-text">
 			Logout

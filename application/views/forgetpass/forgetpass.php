@@ -25,7 +25,6 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('login/')?>css/util.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('login/')?>css/main.css">
-    <script src="<?php echo base_url('login/')?>vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
 </head>
 <body>
@@ -33,7 +32,7 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('<?php echo site_url('login/')?>images/bg-01.jpg');">
         <div class="wrap-login100">
-            <form class="login100-form validate-form" action="<?php echo site_url('LoginPage/checklogin')?>" method="POST">
+            <form class="login100-form validate-form" action="<?php echo site_url('LoginPage/forgetpasscheck')?>" method="POST">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
@@ -41,42 +40,56 @@
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in
 					</span>
-
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" type="text" name="phone" placeholder="เบอร์โทร">
+                    <span class="focus-input100" data-placeholder="&#xf195;"></span>
+                </div>
                 <div class="wrap-input100 validate-input" data-validate = "Enter username">
-                    <input class="input100" type="text" name="username" placeholder="Username">
+                    <select class="input100" name="question">
+                        <option value="1" style="color: #0b2e13">สัตว์เลี้ยงตัวแรกชื่อ</option>
+                        <option value="2" style="color: #0b2e13">ชื่อเพื่อนสนิท</option>
+                        <option value="3" style="color: #0b2e13">อาหารที่ชอบ</option>
+                    </select>
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input class="input100" type="text" name="anwser" placeholder="คำตอบ">
+                    <span class="focus-input100" data-placeholder="&#xf192;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" type="password" name="pass" placeholder="รหัสผ่านใหม่">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
 
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" type="submit">
-                        Login
-                    </button>
+                <div class="row">
+                    <div class="col-md-6" align="center">
+                        <button type="submit" class="btn btn-info">ยืนยัน</button>
+                    </div>
+                    <div class="col-md-6" align="center">
+                        <button class="btn btn-danger" onclick="backpage();">ย้อนกลับ</button>
+                    </div>
                 </div>
 
 
             </form>
             <br/><br/>
-            <div class="row">
-                <div class="col-md-6" align="center">
-                    <a href="<?php echo site_url('LoginPage/newregis')?>"><button class="btn btn-info">สมัครสมาชิก</button></a>
-                </div>
-                <div class="col-md-6" align="center">
-                    <a href="<?php echo site_url('LoginPage/forgotpass')?>"><button class="btn btn-danger">ลืมรหัสผ่าน</button></a>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
 
 
 <div id="dropDownSelect1"></div>
-
-
+<script>
+    function backpage()
+    {
+        window.location.href = "<?php echo site_url('LoginPage/login')?>";
+    }
+</script>
+<!--===============================================================================================-->
+<script src="<?php echo base_url('login/')?>vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
 <script src="<?php echo base_url('login/')?>vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 <script src="<?php echo base_url('login/')?>vendor/bootstrap/js/popper.js"></script>
